@@ -109,12 +109,140 @@ document.querySelectorAll(".faq-item").forEach((item) => {
   });
 });
 
-document.querySelector(".contact-form").addEventListener("submit", (event) => {
+const contactForm = document.querySelector('.contact-form');
+const nameInput = contactForm.querySelector('input[name="name"]');
+const emailInput = contactForm.querySelector('input[name="email"]');
+const phoneInput = contactForm.querySelector('input[name="phone"]');
+const serviceSelect = contactForm.querySelector('select[name="service"]');
+const budgetSelect = contactForm.querySelector('select[name="budget"]');
+const messageInput = contactForm.querySelector('textarea[name="message"]');
+const submitButton = contactForm.querySelector('button[type="submit"]');
+
+const sanitizeName = (value) => value.replace(/[^A-Za-z ]+/g, '').replace(/\s{2,}/g, ' ').trimStart();
+const sanitizePhone = (value) => value.replace(/\D/g, '').slice(0, 10);
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const phonePattern = /^[6-9][0-9]{9}$/;
+const namePattern = /^[A-Za-z ]+$/;
+
+nameInput.addEventListener('input', (event) => {
+  const sanitized = sanitizeName(event.target.value);
+  if (sanitized !== event.target.value) {
+    event.target.value = sanitized;
+  }
+});
+
+phoneInput.addEventListener('input', (event) => {
+  const sanitized = sanitizePhone(event.target.value);
+  if (sanitized !== event.target.value) {
+    event.target.value = sanitized;
+  }
+});
+
+phoneInput.addEventListener('paste', (event) => {
   event.preventDefault();
-  const button = event.currentTarget.querySelector("button");
-  const previous = button.textContent;
-  button.textContent = "Message Ready";
-  setTimeout(() => { button.textContent = previous; }, 1800);
+  const paste = (event.clipboardData || window.clipboardData).getData('text');
+  const sanitized = sanitizePhone(paste);
+  event.target.value = sanitized;
+});
+
+const showFieldValidity = (input) => {
+  if (!input.checkValidity()) {
+    input.reportValidity();
+    return false;
+  }
+  return true;
+};
+
+const validateField = (input, value, pattern, message) => {
+  if (!value) {
+    input.setCustomValidity(message.empty);
+    return false;
+  }
+  if (!pattern.test(value)) {
+    input.setCustomValidity(message.invalid);
+    return false;
+  }
+  input.setCustomValidity('');
+  return true;
+};
+
+contactForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const nameValue = nameInput.value.trim().replace(/\s{2,}/g, ' ');
+  const emailValue = emailInput.value.trim();
+  const phoneValue = phoneInput.value.trim();
+  const serviceValue = serviceSelect.value;
+  const budgetValue = budgetSelect.value;
+  const messageValue = messageInput.value.trim();
+
+  const isNameValid = validateField(nameInput, nameValue, namePattern, {
+    empty: 'Please enter your name.',
+    invalid: 'Name should contain letters and spaces only.'
+  });
+
+  const isEmailValid = validateField(emailInput, emailValue, emailPattern, {
+    empty: 'Please enter your email address.',
+    invalid: 'Please enter a valid email address.'
+  });
+
+  const isPhoneValid = validateField(phoneInput, phoneValue, phonePattern, {
+    empty: 'Please enter your mobile number.',
+    invalid: 'Please enter a valid 10-digit Indian mobile number.'
+  });
+
+  const isServiceValid = Boolean(serviceValue);
+  const isBudgetValid = Boolean(budgetValue);
+  const isMessageValid = Boolean(messageValue);
+
+  if (!isServiceValid) {
+    serviceSelect.setCustomValidity('Please select a service.');
+  } else {
+    serviceSelect.setCustomValidity('');
+  }
+
+  if (!isBudgetValid) {
+    budgetSelect.setCustomValidity('Please select a budget range.');
+  } else {
+    budgetSelect.setCustomValidity('');
+  }
+
+  if (!messageValue) {
+    messageInput.setCustomValidity('Please tell us briefly about your project.');
+  } else if (messageValue.length > 500) {
+    messageInput.setCustomValidity('Message must be 500 characters or less.');
+  } else {
+    messageInput.setCustomValidity('');
+  }
+
+  const isServiceOk = showFieldValidity(serviceSelect);
+  const isBudgetOk = showFieldValidity(budgetSelect);
+  const isMessageOk = showFieldValidity(messageInput);
+
+  if (!isNameValid || !isEmailValid || !isPhoneValid || !isServiceOk || !isBudgetOk || !isMessageOk) {
+    const firstInvalid = [nameInput, emailInput, phoneInput, serviceSelect, budgetSelect, messageInput].find((input) => !input.checkValidity());
+    if (firstInvalid) {
+      firstInvalid.focus();
+      firstInvalid.reportValidity();
+    }
+    return;
+  }
+
+  nameInput.value = nameValue;
+  messageInput.value = messageValue;
+
+  const whatsappMessage = `Hello ARC Stack Web Studio,\n\nI would like to enquire about your services.\n\n━━━━━━━━━━━━━━━━━━\n📋 ENQUIRY DETAILS\n━━━━━━━━━━━━━━━━━━\n\n👤 Name: ${nameValue}\n📧 Email: ${emailValue}\n📱 Phone: ${phoneValue}\n\n💼 Service:\n${serviceValue}\n\n💰 Budget:\n${budgetValue}\n\n📝 Message:\n${messageValue}\n\n━━━━━━━━━━━━━━━━━━\n\nI look forward to hearing from you.\n\nThank you.`;
+  const whatsappUrl = `https://wa.me/919324453478?text=${encodeURIComponent(whatsappMessage)}`;
+
+  submitButton.disabled = true;
+  submitButton.textContent = 'Opening WhatsApp...';
+  window.open(whatsappUrl, '_blank');
+
+  setTimeout(() => {
+    submitButton.disabled = false;
+    submitButton.textContent = 'Submit Enquiry';
+    contactForm.reset();
+  }, 1200);
 });
 
 const canvas = document.getElementById("particleCanvas");

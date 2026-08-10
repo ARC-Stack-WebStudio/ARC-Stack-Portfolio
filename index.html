@@ -168,7 +168,7 @@
         <!-- Basic Package -->
         <article class="price-card reveal">
           <h3>Basic Package</h3>
-          <div class="price">₹32,999</div>
+          <div class="price">₹30,999</div>
 
           <ul>
             <li>Modern Premium Design</li>
@@ -195,7 +195,7 @@
           <div class="badge">Most Popular</div>
 
           <h3>Professional Package</h3>
-          <div class="price">₹56,999</div>
+          <div class="price">₹51,999</div>
 
           <ul>
             <li>Everything in Basic Package +</li>
@@ -218,7 +218,7 @@
         <!-- Premium Package -->
         <article class="price-card reveal">
           <h3>Premium Package</h3>
-          <div class="price">₹79,999</div>
+          <div class="price">₹99,999</div>
 
           <ul>
             <li>Everything in Professional Package +</li>
@@ -244,7 +244,8 @@
       </div>
     </section>
 
-    <section class="section" id="pricing">
+    <!-- Digital work designed -->
+    <!-- <section class="section" id="pricing">
       <div class="section-heading reveal">
         <p class="eyebrow">Digital Marketing Pricing</p>
         <h2>Clear packages for predictable growth.</h2>
@@ -300,7 +301,8 @@
           <a class="btn btn-outline magnetic" href="#contact">Choose Premium</a>
         </article>
       </div>
-    </section>
+    </section> -->
+
 
     <section class="section" id="portfolio">
       <div class="section-heading reveal">
@@ -310,8 +312,6 @@
       <div class="filters reveal" role="tablist" aria-label="Portfolio filters">
         <button class="active" data-filter="all">All</button>
         <button data-filter="web">Web Design</button>
-        <!-- <button data-filter="marketing">Marketing</button>
-        <button data-filter="seo">SEO</button> -->
       </div>
       <div class="portfolio-grid">
         <article class="project-card reveal col-lg-4" data-category="web">
@@ -396,21 +396,30 @@
         <div class="testimonial-track" id="testimonialTrack">
           <article>
             <div class="stars">★★★★★</div>
-            <p>"ARC Stack gave our brand a premium online presence and helped us generate quality local leads within
-              weeks."</p>
-            <div class="client"><span></span><strong>Rohit Sharma</strong><small>Restaurant Owner</small></div>
-          </article>
-          <article>
-            <div class="stars">★★★★★</div>
-            <p>"The dashboard they built is clean, fast and exactly what our team needed to manage daily operations."
+            <small class="review-date">a week ago</small>
+            <p class="review-text">
+              Excellent work by the ARC STACK Web Studio team. They Professional team with creative ideas and fast service in Bhiwandi. They made the whole website development process easy and stress free. I am happy with the quality of work and support.
             </p>
-            <div class="client"><span></span><strong>Priya Mehta</strong><small>Consulting Firm</small></div>
+            <a href="https://www.google.com/maps/contrib/113492910706379767014/reviews/@19.3018435,73.0702291,17z/data=!3m1!4b1!4m3!8m2!3m1!1e1?hl=en-GB&entry=ttu&g_ep=EgoyMDI2MDgwNS4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="google-review-link">Read more on Google</a>
+            <div class="client"><span></span><strong>Kaniz Fatema Shaikh</strong><small>Google Review</small></div>
           </article>
           <article>
             <div class="stars">★★★★★</div>
-            <p>"Their marketing package brought structure, creatives and measurable growth to our social media
-              presence."</p>
-            <div class="client"><span></span><strong>Aman Verma</strong><small>Fitness Studio</small></div>
+            <small class="review-date">a week ago</small>
+            <p class="review-text">
+              If you're looking for website design services in Bhiwandi, ARCSTACK Web Studio is a great choice. Their team is talented, responsive, and delivers high-quality work.
+            </p>
+            <a href="https://www.google.com/maps/contrib/106813891261470669060/place/ChIJwwBx5_W95zsRaUCs-b3EvB0/@19.3018435,73.0702291,17z/data=!4m6!1m5!8m4!1e1!2s106813891261470669060!3m1!1e1?hl=en-GB&entry=ttu&g_ep=EgoyMDI2MDgwNS4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="google-review-link">Read more on Google</a>
+            <div class="client"><span></span><strong>Zain Shaikh</strong><small>Google Review</small></div>
+          </article>
+          <article>
+            <div class="stars">★★★★★</div>
+            <small class="review-date">a week ago</small>
+            <p class="review-text">
+              ARC STACK Web Studio did an amazing job designing our website. Their team is professional, creative, and delivers excellent quality in Bhiwandi.
+            </p>
+            <a href="https://www.google.com/maps/contrib/108896354093778835735/place/ChIJwwBx5_W95zsRaUCs-b3EvB0/@19.3018435,73.0650793,16z/data=!4m6!1m5!8m4!1e1!2s108896354093778835735!3m1!1e1?hl=en-GB&entry=ttu&g_ep=EgoyMDI2MDgwNS4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="google-review-link">Read more on Google</a>
+            <div class="client"><span></span><strong>Shaikh Kaif</strong><small>Google Review</small></div>
           </article>
         </div>
       </div>
@@ -470,21 +479,23 @@
       </div>
       <div class="contact-grid">
         <form class="contact-form reveal">
-          <input type="text" placeholder="Name" aria-label="Name" required>
-          <input type="email" placeholder="Email" aria-label="Email" required>
-          <input type="tel" placeholder="Phone" aria-label="Phone" required>
-          <select aria-label="Service">
-            <option>Web Design & Development</option>
-            <option>Dynamic Web Solutions</option>
-            <option>Digital Marketing & AI</option>
+          <input type="text" name="name" placeholder="Name" aria-label="Name" required pattern="[A-Za-z ]+"
+            title="Please enter letters and spaces only">
+          <input type="email" name="email" placeholder="Email" aria-label="Email" required>
+          <input type="tel" name="phone" placeholder="Phone" aria-label="Phone" inputmode="numeric" maxlength="10"
+            pattern="[6-9][0-9]{9}" title="Enter a valid 10-digit Indian mobile number" required>
+          <select name="service" aria-label="Service">
+            <option value="Web Design & Development">Web Design & Development</option>
+            <option value="Dynamic Web Solutions">Dynamic Web Solutions</option>
+            <option value="Digital Marketing & AI">Digital Marketing & AI</option>
           </select>
-          <select aria-label="Budget range">
-            <option>Budget Range</option>
-            <option>₹20,000 - ₹50,000</option>
-            <option>₹50,000 - ₹1,00,000</option>
-            <option>₹1,00,000+</option>
+          <select name="budget" aria-label="Budget range" required>
+            <option value="" disabled selected>Budget Range</option>
+            <option value="₹20,000 - ₹50,000">₹20,000 - ₹50,000</option>
+            <option value="₹50,000 - ₹1,00,000">₹50,000 - ₹1,00,000</option>
+            <option value="₹1,00,000+">₹1,00,000+</option>
           </select>
-          <textarea placeholder="Message" aria-label="Message"></textarea>
+          <textarea name="message" placeholder="Message" aria-label="Message" maxlength="500" required></textarea>
           <button class="btn magnetic" type="submit">Submit Enquiry</button>
         </form>
         <div class="contact-details reveal">
