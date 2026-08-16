@@ -231,7 +231,7 @@ contactForm.addEventListener('submit', (event) => {
   nameInput.value = nameValue;
   messageInput.value = messageValue;
 
-  const whatsappMessage = `Hello ARC Stack Web Studio,\n\nI would like to enquire about your services.\n\n━━━━━━━━━━━━━━━━━━\n📋 ENQUIRY DETAILS\n━━━━━━━━━━━━━━━━━━\n\n👤 Name: ${nameValue}\n📧 Email: ${emailValue}\n📱 Phone: ${phoneValue}\n\n💼 Service:\n${serviceValue}\n\n💰 Budget:\n${budgetValue}\n\n📝 Message:\n${messageValue}\n\n━━━━━━━━━━━━━━━━━━\n\nI look forward to hearing from you.\n\nThank you.`;
+  const whatsappMessage = `Hello ARC Stack Web Studio,\n\nI would like to enquire about your services.\n\n━━━━━━━━━━━━━━━━━━\n📋 ENQUIRY DETAILS\n━━━━━━━━━━━━━━━━━━\n\n👤 Name: ${nameValue}\n📧 Email: ${emailValue}\n📱 Phone: ${phoneValue}\n\n💼 Service:\n${serviceValue}\n\n💰 Which Business:\n${budgetValue}\n\n📝 Message:\n${messageValue}\n\n━━━━━━━━━━━━━━━━━━\n\nI look forward to hearing from you.\n\nThank you.`;
   const whatsappUrl = `https://wa.me/919324453478?text=${encodeURIComponent(whatsappMessage)}`;
 
   submitButton.disabled = true;
