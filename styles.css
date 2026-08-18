@@ -1194,6 +1194,7 @@ ul {
 
   .portfolio-grid {
     columns: 1;
+    display: flow;
   }
 
   .testimonial-track p {
