@@ -565,15 +565,10 @@ ul {
 }
 
 .portfolio-grid {
-  /* columns: 3 260px; */
-  column-gap: 22px;
-  display: flex;
+  /* Bootstrap's .row and g-4 classes control the portfolio layout and gutters. */
 }
 
 .project-card {
-  display: inline-block;
-  width: 100%;
-  margin: 0 0 22px;
   padding: 14px;
   position: relative;
   overflow: hidden;
@@ -1190,11 +1185,6 @@ ul {
   .hero-actions,
   .cta-banner div {
     width: 100%;
-  }
-
-  .portfolio-grid {
-    columns: 1;
-    display: flow;
   }
 
   .testimonial-track p {

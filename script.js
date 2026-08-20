@@ -91,7 +91,7 @@ document.querySelectorAll(".filters button").forEach((button) => {
     const filter = button.dataset.filter;
     document.querySelectorAll(".project-card").forEach((card) => {
       const show = filter === "all" || card.dataset.category === filter;
-      card.style.display = show ? "inline-block" : "none";
+      card.style.display = show ? "" : "none";
     });
   });
 });
