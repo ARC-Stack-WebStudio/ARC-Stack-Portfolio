@@ -45,10 +45,11 @@
       <span></span><span></span><span></span>
     </button>
     <nav class="nav-links" id="navLinks">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#package">Package</a>
-      <a href="#portfolio">Work</a>
+      <a class="nav-link active" href="index.html">Home</a>
+      <a class="nav-link" href="aboutus.html">About</a>
+      <a class="nav-link" href="#project">Projects</a>
+      <a class="nav-link" href="#package">Package</a>
+      <a class="nav-link" href="#services">Services</a>
       <!-- <a href="#contact">Contact</a> -->
       <a class="btn btn-small magnetic" href="#contact">Book Free Consultation</a>
     </nav>
@@ -70,42 +71,75 @@
         <p class="hero-subtitle">Your Vision. Our Code. Endless Growth.</p>
         <div class="hero-actions">
           <a class="btn magnetic" href="#contact">Book Free Consultation</a>
-          <a class="btn btn-outline magnetic" href="#portfolio">View Our Work</a>
+          <a class="btn btn-outline magnetic" href="#project">View Our Work</a>
         </div>
       </div>
     </section>
 
-    <section class="section about" id="about">
-      <div class="section-heading reveal">
-        <p class="eyebrow">About ARC Stack</p>
-        <h2>We build digital systems that look premium and work hard.</h2>
+    <!-- Company Logo Marquee -->
+    <div class="logo-marquee reveal">
+      <div>
+        <span>ARC Labs</span><span>Alexis
+          Hospital</span><span>La-Sani</span><span>Gazaal-Abaya</span><span>Azad-Industries</span><span>Alexis-Hosptial</span><span>Wisdom-School</span><span>Rconstructivo</span><span>ARC
+          Labs</span><span>Wisdom-School</span><span>Gazaal-Abaya</span><span>Alexis Hospital</span><span>La-Sani</span>
       </div>
-      <div class="about-grid">
-        <div class="glass-panel reveal">
-          <p>ARC Stack Web Studio helps businesses across Bhiwandi, Mumbra, Kalyan, Thane, Kurla, Bandra, Navi Mumbai
-            and across
-            Maharashtra build professional, modern and conversion-focused websites. We combine website design, custom
-            web development,
-            SEO, digital marketing, business analysis, marketing automation and AI integrations to create digital
-            experiences that
-            are tailored to your business, budget and target audience. Whether you need a website for a local business,
-            school, hospital,
-            industrial company, restaurant, startup or established brand, we focus on building a strong online presence
-            that helps your
-            business attract, engage and convert customers.</p>
-          <div class="stats-grid">
-            <div><strong data-count="07">0</strong><span>Projects</span></div>
-            <div><strong data-count="04">0</strong><span>Happy Clients</span></div>
-            <div><strong data-count="04">0</strong><span>Core Services</span></div>
-            <div><strong data-count="99">0</strong><span>Satisfaction</span></div>
+    </div>
+
+    <!-- My Projects -->
+    <section class="section" id="project">
+      <div class="section-heading reveal">
+        <p class="eyebrow">PROJECTS</p>
+        <h2>Digital work designed to feel fast, clear and premium.</h2>
+      </div>
+      <div class="filters reveal" role="tablist" aria-label="Portfolio filters">
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="web">Web Design</button>
+      </div>
+      <div class="portfolio-grid row g-4">
+
+        <article class="project-card reveal col-12 col-md-6 col-lg-4" data-category="web">
+          <div class="mockup">
+            <img src="./assets/Wisdom-school-logo.jpeg" alt="Wisdom Academy School Logo">
           </div>
-        </div>
-        <!-- <div class="team-card reveal">
-          <div class="team-orbit"></div>
-          <i class="fa-solid fa-users-viewfinder"></i>
-          <span>Team Photo Placeholder</span>
-        </div>
-      </div> -->
+          <h3>Wisdom Academy School</h3>
+          <p>Web Design</p>
+          <a href="https://wisdomacademyschool.com/" target="_blank" rel="noopener noreferrer">
+            View Project
+          </a>
+        </article>
+
+        <article class="project-card reveal col-12 col-md-6 col-lg-4" data-category="web">
+          <div class="mockup">
+            <img src="./assets/lasani-logo-white.png" alt="La-Sani Logo">
+          </div>
+          <h3>La-Sani</h3>
+          <p>Web Design </p><a href="https://www.la-sani.com/">View Project</a>
+        </article>
+
+        <article class="project-card reveal col-12 col-md-6 col-lg-4" data-category="web">
+          <div class="mockup">
+            <img src="./assets/alexis-hospital.png" alt="ALEXIS HOSPITAL">
+          </div>
+          <h3>Alexis Hospital</h3>
+          <p>Web Site Services</p><a href="https://alexishospitalbhiwandi.com/">View Project</a>
+        </article>
+
+        <article class="project-card reveal col-12 col-md-6 col-lg-4" data-category="marketing">
+          <div class="mockup ">
+            <img src="./assets/Logo-Fav.png" alt="Azad-Industries Logo">
+          </div>
+          <h3>Azad-Industries</h3>
+          <p>Marketing </p><a href="https://www.azadindustries.store/">View Project</a>
+        </article>
+
+        <!-- <article class="project-card reveal col-12 col-md-6 col-lg-4" data-category="seo">
+          <div class="mockup ">
+            <img src="./assets/Logistic.png" alt="LogisticIndustries Logo">
+          </div>
+          <h3>LogisticIndustries</h3>
+          <p>Marketing</p><a href="https://ashh-khan.github.io/Ashnab-LogisticIndustries/">View Project</a>
+        </article> -->
+      </div>
     </section>
 
     <section class="section" id="services">
@@ -113,34 +147,57 @@
         <p class="eyebrow">Core Services</p>
         <h2>Three growth engines. One sharp digital partner.</h2>
       </div>
+
       <div class="service-grid">
+
+        <!-- Web Design & Development -->
         <article class="service-card tilt reveal blue">
           <i class="fa-solid fa-laptop-code"></i>
           <h3>Web Design & Development</h3>
           <ul>
-            <li>Fast Loading</li>
-            <li>Mobile Responsive</li>
-            <li>SEO Friendly</li>
+            <li>Custom Business Websites</li>
+            <li>Responsive UI/UX Design</li>
+            <li>Landing Pages & Lead Generation</li>
+            <li>Website Redesign & Modernization</li>
+            <li>Fast Loading & Performance</li>
+            <li>SEO-Friendly Development</li>
+            <li>Domain & Hosting Setup</li>
+            <li>Contact Forms & WhatsApp Integration</li>
           </ul>
         </article>
+
+        <!-- Dynamic Web Solutions -->
         <article class="service-card tilt reveal purple">
           <i class="fa-solid fa-database"></i>
           <h3>Dynamic Web Solutions</h3>
           <ul>
-            <li>Dynamic Databases</li>
-            <li>User Portals & Dashboards</li>
-            <li>CRUD Operations</li>
+            <li>Database-Driven Websites</li>
+            <li>Admin Panels & Dashboards</li>
+            <li>CRUD Operations & Data Management</li>
+            <li>User Login & Authentication</li>
+            <li>Customer & Lead Management</li>
+            <li>Online Forms & Enquiry Systems</li>
+            <li>API & Third-Party Integrations</li>
+            <li>Website Maintenance & Support</li>
           </ul>
         </article>
+
+        <!-- Digital Marketing & AI -->
         <article class="service-card tilt reveal cyan">
           <i class="fa-solid fa-brain"></i>
           <h3>Digital Marketing & AI</h3>
           <ul>
+            <li>Search Engine Optimization (SEO)</li>
+            <li>Local SEO & Google Maps Visibility</li>
+            <li>Google Business Profile Optimization</li>
             <li>Social Media Marketing</li>
-            <li>SEO & Google Ranking</li>
+            <li>Social Media Creatives & Branding</li>
+            <li>Google Ads Campaign Management</li>
             <li>AI Chatbot Integration</li>
+            <li>WhatsApp Business Automation</li>
           </ul>
         </article>
+
       </div>
     </section>
 
@@ -163,6 +220,9 @@
         <span><i class="fa-solid fa-user-astronaut"></i>Personal</span>
         <span><i class="fa-solid fa-seedling"></i>Farming</span>
         <span><i class="fa-solid fa-helmet-safety"></i>Construction</span>
+        <span><i class="fa-solid fa-hospital"></i>Hospitals & Healthcare</span>
+        <span><i class="fa-solid fa-industry"></i>Manufacturing & Industrial</span>
+        <span><i class="fa-solid fa-cart-shopping"></i>E-Commerce & Online Stores</span>
       </div>
     </section>
 
@@ -312,109 +372,7 @@
       </div>
     </section> -->
 
-    <!-- My Projects -->
-    <section class="section" id="portfolio">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Portfolio</p>
-        <h2>Digital work designed to feel fast, clear and premium.</h2>
-      </div>
-      <div class="filters reveal" role="tablist" aria-label="Portfolio filters">
-        <button class="active" data-filter="all">All</button>
-        <button data-filter="web">Web Design</button>
-      </div>
-      <div class="portfolio-grid row g-4">
 
-        <article class="project-card reveal col-12 col-md-6 col-lg-4" data-category="web">
-          <div class="mockup">
-            <img src="./assets/Wisdom-school-logo.jpeg" alt="Wisdom Academy School Logo">
-          </div>
-          <h3>Wisdom Academy School</h3>
-          <p>Web Design</p>
-          <a href="https://wisdomacademyschool.com/" target="_blank" rel="noopener noreferrer">
-            View Project
-          </a>
-        </article>
-
-        <article class="project-card reveal col-12 col-md-6 col-lg-4" data-category="web">
-          <div class="mockup">
-            <img src="./assets/lasani-logo-white.png" alt="La-Sani Logo">
-          </div>
-          <h3>La-Sani</h3>
-          <p>Web Design </p><a href="https://www.la-sani.com/">View Project</a>
-        </article>
-
-        <article class="project-card reveal col-12 col-md-6 col-lg-4" data-category="web">
-          <div class="mockup">
-            <img src="./assets/alexis-hospital.png" alt="ALEXIS HOSPITAL">
-          </div>
-          <h3>Alexis Hospital</h3>
-          <p>Web Site Services</p><a href="https://alexishospitalbhiwandi.com/">View Project</a>
-        </article>
-
-        <article class="project-card reveal col-12 col-md-6 col-lg-4" data-category="marketing">
-          <div class="mockup ">
-            <img src="./assets/Logo-Fav.png" alt="Azad-Industries Logo">
-          </div>
-          <h3>Azad-Industries</h3>
-          <p>Marketing </p><a href="https://www.azadindustries.store/">View Project</a>
-        </article>
-
-        <!-- <article class="project-card reveal col-12 col-md-6 col-lg-4" data-category="seo">
-          <div class="mockup ">
-            <img src="./assets/Logistic.png" alt="LogisticIndustries Logo">
-          </div>
-          <h3>LogisticIndustries</h3>
-          <p>Marketing</p><a href="https://ashh-khan.github.io/Ashnab-LogisticIndustries/">View Project</a>
-        </article> -->
-      </div>
-    </section>
-
-    <section class="section process" id="process">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Process</p>
-        <h2>From first idea to launch momentum.</h2>
-      </div>
-      <div class="process-line reveal">
-        <div><span>1</span>
-          <h3>Discovery</h3>
-        </div>
-        <div><span>2</span>
-          <h3>Design</h3>
-        </div>
-        <div><span>3</span>
-          <h3>Develop</h3>
-        </div>
-        <div><span>4</span>
-          <h3>Launch</h3>
-        </div>
-      </div>
-    </section>
-
-    <section class="section why" id="why">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Why Choose Us</p>
-        <h2>Built for businesses that want results, not just decoration.</h2>
-      </div>
-      <div class="feature-grid">
-        <div class="feature reveal"><i class="fa-solid fa-bolt"></i>
-          <h3>Fast Delivery</h3>
-        </div>
-        <div class="feature reveal"><i class="fa-solid fa-bullseye"></i>
-          <h3>Result-Oriented</h3>
-        </div>
-        <div class="feature reveal"><i class="fa-solid fa-sliders"></i>
-          <h3>Custom Solutions</h3>
-        </div>
-        <div class="feature reveal"><i class="fa-solid fa-chart-pie"></i>
-          <h3>Data-Driven Strategy</h3>
-        </div>
-      </div>
-      <div class="logo-marquee reveal">
-        <div><span>ARC
-            Labs</span><span>La-Sani</span><span>Azad-Industries</span><span>Alexis-Hosptial</span><span>Wisdom-School</span><span>Rconstructivo</span><span>ARC
-            Labs</span><span>Gazaal-Abaya</span><span>La-Sani</span></div>
-      </div>
-    </section>
 
     <section class="section testimonials" id="testimonials">
       <div class="section-heading reveal">
@@ -664,91 +622,6 @@
     </section>
 
 
-
-    <section class="section blog" id="blog">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Digital Growth Insights</p>
-        <h2>Web Design, SEO & Digital Marketing Insights for Growing Businesses</h2>
-        <p>
-          Practical insights on website design, local SEO, Google Business Profile,
-          digital marketing and online growth strategies for businesses.
-        </p>
-      </div>
-
-      <div class="blog-grid">
-
-        <!-- Blog 1 -->
-        <article class="blog-card reveal">
-          <span>Web Design</span>
-
-          <h3>
-            Why Does Your Business Need a Professional Website in 2026?
-          </h3>
-
-          <!-- <time datetime="2026-08-16">Aug 16, 2026</time> -->
-
-          <p>
-            A professional business website helps build trust, showcase your
-            services, generate enquiries and make your business easier to find
-            online. Learn how a modern, mobile-friendly website can help local
-            businesses attract more customers and grow online.
-          </p>
-
-          <a href="#contact" aria-label="Read more about why your business needs a professional website">
-            For More Info
-          </a>
-        </article>
-
-
-        <!-- Blog 2 -->
-        <article class="blog-card reveal">
-          <span>Local SEO & AEO</span>
-
-          <h3>
-            How Can Local SEO Help Your Business Get More Customers from Google?
-          </h3>
-
-          <!-- <time datetime="2026-08-16">Aug 16, 2026</time> -->
-
-          <p>
-            Local SEO helps businesses appear when customers search for services
-            near them. Learn how Google Business Profile optimization, local
-            keywords, location pages, reviews, helpful content and accurate
-            business information can improve your local online visibility.
-          </p>
-
-          <a href="#contact" aria-label="Read more about local SEO and Google rankings">
-            For More Info
-          </a>
-        </article>
-
-
-        <!-- Blog 3 -->
-        <article class="blog-card reveal">
-          <span>SEO & Digital Marketing</span>
-
-          <h3>
-            What Are the Most Important SEO Strategies for a Service Business?
-          </h3>
-
-          <!-- <time datetime="2026-08-16">Aug 16, 2026</time> -->
-
-          <p>
-            Discover important SEO strategies including technical SEO, keyword
-            research, service pages, local SEO, helpful content, internal linking,
-            Google Business Profile optimization and conversion-focused website
-            design.
-          </p>
-
-          <a href="#contact" aria-label="Read more about SEO strategies for service businesses">
-            For More Info
-          </a>
-        </article>
-
-      </div>
-    </section>
-
-
     <section class="section contact" id="contact">
       <div class="section-heading reveal">
         <p class="eyebrow">Contact</p>
@@ -843,8 +716,13 @@
     <p class="copyright">© 2026 ARC Stack Web Studio. All Rights Reserved.</p>
   </footer>
 
+  <a class="call magnetic" href="tel:+919324453478" aria-label="Call ARC Stack Web Studio">
+    <i class="fa-solid fa-phone"></i>
+  </a>
+
   <a class="whatsapp magnetic" href="https://wa.me/919324453478" aria-label="Chat on WhatsApp"><i
-      class="fa-brands fa-whatsapp"></i></a>
+      class="fa-brands fa-whatsapp"></i>
+  </a>
   <script src="script.js"></script>
 </body>
 
